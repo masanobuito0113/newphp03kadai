@@ -1,6 +1,7 @@
 <!-- 共通ヘッダー -->
 <?php require'header.php';?>
 
+
 <?php
 
 error_reporting(E_ALL);
@@ -15,7 +16,7 @@ try {
 } catch (PDOException $e) {
     exit('DB Connection Error:' . $e->getMessage());
 }
-$stmt = $pdo->prepare('SELECT * FROM php03;');
+$stmt = $pdo->prepare('SELECT * FROM php03');
 $status = $stmt->execute();
 
 
@@ -42,20 +43,31 @@ if ($status === false) {
 // }
 
 $view .= '<p>';
-$view .= $result['imagepath'] . '：' . $result['food'];
+$view .= '<a href="singleimage.php?id=' . $result['id'] . '">';
+$view .= '<img src="'. $result['imagepath'] . '" maxwidth="300" height="300 ">';
+$view .= '</a>';
 $view .= '</p>';
     }
 }
+
 ?>
 
-<div class="container jumbotron "><?= $view ?></div>
-
+<div class="container">
+  <div class="row">
+        <div class="container jumbotron"><?= $view ?></div>
+  </div>
+</div>
         <a class="navbar-brand" href="index.php">データ登録へもどる</a>
 
 </body>
 
 </html>
 
+
+<!-- $view .= '<p>';
+$view .= '<img src="'. $result['imagepath'] . '" maxwidth="300" height="300">'
+. 'PLACE：' . $result['place'] . '<br>' . 'FOOD：' . $result['food'];
+$view .= '</p>'; -->
 
 
 
