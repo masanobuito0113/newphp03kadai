@@ -32,16 +32,25 @@ $result = $stmt->fetch();
 
 
 $view .= '<p>';
-$view .= '<img src="'. $result['imagepath'] . '" maxwidth="600" height="600">'
-. 'PLACE：' . $result['place'] . '<br>' . 'FOOD：' . $result['food'];
+$view .= '<img src="'. $result['imagepath'] . '" maxwidth="400" height="400">'
+. '<br>'. 'PLACE：' . $result['place'] . '<br>' . 'FOOD：' . $result['food']. '<br>' . 'COMMENT：' . $result['comment'];
 $view .= '</p>';
 
 ?>
-<div class="container">
-  <div class="row">
-        <div class="container jumbotron"><?= $view ?></div>
-  </div>
+ <div class="container">
+    <div class="row">
+        <div class="container jumbotron"><?= $view ?>
+            <div class=" mb-1">
+            <a href="detail.php?id=<?php echo $result['id']; ?>" class="btn btn-primary">更新</a>
+            </div>
+            <div class="mb-1">
+                <a href="delate.php?id=<?php echo $result['id']; ?>" class="btn btn-primary">削除</a>
+             </div>
+
+    </div>
 </div>
+    </div>
+
         <a class="navbar-brand" href="index.php">データ登録へもどる</a>
 
 
