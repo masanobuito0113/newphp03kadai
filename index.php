@@ -43,7 +43,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script>
-    function submitForm() {
+    function submit() {
         window.location.href = 'select.php';
         return false;
     }
