@@ -44,7 +44,7 @@ if ($status === false) {
 
 $view .= '<p>';
 $view .= '<a href="singleimage.php?id=' . $result['id'] . '">';
-$view .= '<img src="'. $result['imagepath'] . '" maxwidth="300" height="300 ">';
+$view .= '<img src="'. $result['imagepath'] . '" maxwidth="200" height="200 ">';
 $view .= '</a>';
 $view .= '</p>';
     }
